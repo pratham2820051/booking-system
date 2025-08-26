@@ -143,7 +143,18 @@ export class MemStorage implements IStorage {
 
     sampleBuses.forEach(bus => {
       const id = randomUUID();
-      const busWithId: Bus = { ...bus, id };
+      const busWithId: Bus = { 
+        ...bus, 
+        id,
+        originalPrice: bus.originalPrice ?? null,
+        amenities: bus.amenities ?? [],
+        isAc: bus.isAc ?? false,
+        isSleeper: bus.isSleeper ?? false,
+        hasWifi: bus.hasWifi ?? false,
+        hasCharging: bus.hasCharging ?? false,
+        hasMeals: bus.hasMeals ?? false,
+        hasLiveTracking: bus.hasLiveTracking ?? false
+      };
       this.buses.set(id, busWithId);
     });
   }
@@ -180,7 +191,18 @@ export class MemStorage implements IStorage {
 
   async createBus(insertBus: InsertBus): Promise<Bus> {
     const id = randomUUID();
-    const bus: Bus = { ...insertBus, id };
+    const bus: Bus = { 
+      ...insertBus, 
+      id,
+      originalPrice: insertBus.originalPrice ?? null,
+      amenities: insertBus.amenities ?? [],
+      isAc: insertBus.isAc ?? false,
+      isSleeper: insertBus.isSleeper ?? false,
+      hasWifi: insertBus.hasWifi ?? false,
+      hasCharging: insertBus.hasCharging ?? false,
+      hasMeals: insertBus.hasMeals ?? false,
+      hasLiveTracking: insertBus.hasLiveTracking ?? false
+    };
     this.buses.set(id, bus);
     return bus;
   }
@@ -194,6 +216,7 @@ export class MemStorage implements IStorage {
     const query: SearchQuery = { 
       ...insertQuery, 
       id,
+      passengers: insertQuery.passengers ?? 1,
       createdAt: new Date()
     };
     this.searchQueries.set(id, query);

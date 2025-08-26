@@ -20,9 +20,9 @@ export default function SearchResults() {
   });
   const [sortBy, setSortBy] = useState("departure");
   const [filters, setFilters] = useState({
-    busTypes: [],
-    departureTimes: [],
-    priceRanges: [],
+    busTypes: [] as string[],
+    departureTimes: [] as string[],
+    priceRanges: [] as string[],
   });
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function SearchResults() {
     });
   }, []);
 
-  const { data: buses = [], isLoading, error } = useQuery({
+  const { data: buses = [], isLoading, error } = useQuery<Bus[]>({
     queryKey: ['/api/buses/search', searchParams],
     enabled: !!(searchParams.source && searchParams.destination && searchParams.date),
   });
