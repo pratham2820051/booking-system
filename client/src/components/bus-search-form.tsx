@@ -68,7 +68,7 @@ export default function BusSearchForm({ onSearch }: BusSearchFormProps) {
                       <Input
                         placeholder="Enter source city"
                         {...field}
-                        className="pr-10"
+                        className="pr-10 text-black"
                         data-testid="input-source"
                       />
                       <MapPin className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-primary" />
@@ -90,7 +90,7 @@ export default function BusSearchForm({ onSearch }: BusSearchFormProps) {
                       <Input
                         placeholder="Enter destination city"
                         {...field}
-                        className="pr-10"
+                        className="pr-10 text-black"
                         data-testid="input-destination"
                       />
                       <MapPin className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-primary" />
@@ -113,7 +113,7 @@ export default function BusSearchForm({ onSearch }: BusSearchFormProps) {
                         type="date"
                         {...field}
                         min={new Date().toISOString().split('T')[0]}
-                        className="pr-10"
+                        className="pr-10 text-black"
                         data-testid="input-date"
                       />
                       <Calendar className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-primary" />
