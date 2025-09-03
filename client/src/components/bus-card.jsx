@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FaStar, FaWifi, FaSnowflake, FaBolt, FaBed, FaUtensils, FaMapMarkerAlt, FaClock, FaRoute } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 export default function BusCard({ bus, onSelectSeats }) {
   const rating = bus.rating || 4.0; // Default rating if not provided
@@ -156,14 +155,13 @@ export default function BusCard({ bus, onSelectSeats }) {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <Badge 
-                  variant="secondary"
+                <span
                   className={`badge-enhanced inline-flex items-center px-3 py-2 rounded-full text-xs border ${getAmenityColor(amenity)}`}
                   data-testid={`badge-amenity-${index}-${bus.id}`}
                 >
                   {getAmenityIcon(amenity)}
                   {amenity}
-                </Badge>
+                </span>
               </motion.div>
             ))}
           </div>

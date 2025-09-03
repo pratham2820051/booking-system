@@ -5,7 +5,7 @@ import BusSearchForm from "@/components/bus-search-form";
 export default function Home() {
   const popularRoutes = [
     {
-      route: "Delhi → Mumbai",
+      route: "Mumbai → Delhi",
       image: "https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
     },
 
@@ -14,7 +14,7 @@ export default function Home() {
       image: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200",
     },
     {
-      route: "Pune → Goa",
+      route: "Goa → Mumbai",
       image: "https://images.unsplash.com/photo-1595658658481-d53d3f999875?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200", 
     }
   ];
@@ -226,7 +226,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
+
+      {/* Stats Section 
       <section className="py-20 bg-gradient-to-r from-primary to-red-600 text-white">
         <div className="container mx-auto px-4">
           <motion.div 
@@ -273,7 +274,7 @@ export default function Home() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </section>*/}
     </div>
   );
 }
