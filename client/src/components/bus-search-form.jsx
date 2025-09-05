@@ -7,7 +7,6 @@ import { FaMapMarkerAlt, FaCalendarAlt, FaSearch, FaExchangeAlt } from "react-ic
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-// Schema validation removed - using simple validation instead
 import { useToast } from "@/hooks/use-toast";
 
 export default function BusSearchForm({ onSearch }) {
@@ -36,7 +35,7 @@ export default function BusSearchForm({ onSearch }) {
       source: data.source,
       destination: data.destination,
       date: data.travelDate,
-      passengers: "1", // Default to 1 passenger
+      passengers: "1", 
     });
 
     setLocation(`/search?${searchParams.toString()}`);
@@ -88,7 +87,7 @@ export default function BusSearchForm({ onSearch }) {
                       <Input
                         placeholder="Enter source city"
                         {...field}
-                        className="h-12 text-lg border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 rounded-xl"
+                        className="h-12 text-lg text-black border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 rounded-xl placeholder:text-gray-400"
                         data-testid="input-source"
                       />
                       <FaMapMarkerAlt className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-primary" />
@@ -128,7 +127,7 @@ export default function BusSearchForm({ onSearch }) {
                       <Input
                         placeholder="Enter destination city"
                         {...field}
-                        className="h-12 text-lg border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 rounded-xl"
+                        className="h-12 text-lg text-black border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 rounded-xl placeholder:text-gray-400"
                         data-testid="input-destination"
                       />
                       <FaMapMarkerAlt className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-primary" />
@@ -158,7 +157,7 @@ export default function BusSearchForm({ onSearch }) {
                          type="date"
                          {...field}
                          min={new Date().toISOString().split('T')[0]}
-                         className="h-12 text-lg border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 rounded-xl text-black"
+                         className="h-12 text-lg text-black border-2 border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 rounded-xl placeholder:text-gray-400"
                          data-testid="input-date"
                        />
                       <FaCalendarAlt className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-primary" />
